@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let requestURL = './classe.json'; /*ho dato un nome di richiesta alla classe ho messo url perche è un percorso nel mio file json*/
+        let request = new XMLHttpRequest(); /* questo lo si fa per partire con la richiesta è cosi e basta*/
+        request.open('GET',requestURL); /* apro la richiesta e diciamo che è una get di questo requesturl*/
+        request.responseType = 'json'; /*settare il tipo di risposta, in questo caso è un json e quindi lo scrivo*/
+        request.send(); /**/
+
+        request.onload = function () {
+            const classe = request.response;
+            console.log(classe);
+        }
+/*aspettiamo che ci ritorni quindi quando la richiesta viene caricata mi fai la funcione ; e ci metto che la risposta è una costante classe*/
+    </script>
+</body>
+</html>
